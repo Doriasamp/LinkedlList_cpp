@@ -27,6 +27,16 @@ int main(){
     std::cout << "Searching for value '5' in the LL: " << LL.search(5) << std::endl;
     std::cout << "Searching for value '64' in the LL: " << LL.search(64) << std::endl;
 
+    // test deep copy constructor
+    LinkedList new_LL = LL;
+    std::cout << "\nResult of copy constructor ..." << std::endl;
+    new_LL.print();
+
+    // trivia test by copying an empty LL
+    LinkedList empty_LL = LinkedList();
+    LinkedList copy_empty_LL = empty_LL;
+    std::cout << "\nResult of copy constructor with empty..." << std::endl;
+    new_LL.print();
 
 
     return 0;
