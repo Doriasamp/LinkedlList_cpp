@@ -5,8 +5,30 @@ LinkedList::LinkedList(Node* init_node):head_{init_node}, tail_{init_node}
 
 }
 
+LinkedList::LinkedList(const LinkedList& other) // deep copy constructor by traversing the LL
+{
+    if(other.is_empty())
+        return;
+
+    Node* temp_head = other.get_head_node_();
+    while(temp_head){
+        this->append(temp_head->get_value());
+        temp_head = temp_head->get_next();
+    }
+
+}
+
+LinkedList& LinkedList::operator=(const LinkedList& right)
+{
+    return *this;
+
+}
+
 LinkedList::~LinkedList()
 {
+    if (head_)
+        delete head_;
+    head_ = nullptr;
 
 }
 
@@ -34,7 +56,7 @@ void LinkedList::append(int value){
     }
 }
 
-bool LinkedList::is_empty(){
+bool LinkedList::is_empty() const{
     if(!head_)
         return true;
     return false;
