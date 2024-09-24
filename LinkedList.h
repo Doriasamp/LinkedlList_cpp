@@ -4,8 +4,10 @@
 
 class LinkedList{
 public:
-    LinkedList(Node* init_node = nullptr);
+    LinkedList(Node* init_node = nullptr);  // constructor
+    LinkedList(const LinkedList& other);    // deep copy constructor
     ~LinkedList();
+    LinkedList& operator=(const LinkedList& other); //overloaded assignment operator
 
     inline int get_head() const {return get_head_node_()->get_value();}
     inline int get_tail() const {return get_tail_node_()->get_value();}
@@ -25,7 +27,7 @@ public:
      */
     void append(int);
     
-    bool is_empty();
+    bool is_empty() const;
 
     /**
     * @brief Display in the console all the elements in the LL.

@@ -7,6 +7,10 @@ Node::Node(int value, Node* next):value_{value}, next_{next}
 
 Node::~Node()
 {
+    if (next_)
+        delete next_;
+    next_ = nullptr;
+    //std::cout << "deleted node with value: " << this->value_ << std::endl;
 
 }
 
