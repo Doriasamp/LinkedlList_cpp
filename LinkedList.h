@@ -35,12 +35,18 @@ public:
     void print();
 
     /**
-    * @brief Search if the value passed exists in the linkedlist.
+    * @brief Linear search. Search if the value passed exists in the linkedlist.
     *
     * @param value The value to search for.
     * @return The index at which the value is stored in the LL, if the value is not present returns -1.
     */
-    int search(int);
+    int search(int) const;
+
+    bool delete_first(int);
+
+    bool delete_many(int, int);
+
+    bool delete_all(int);
 
 
 
@@ -54,5 +60,6 @@ private:
     void set_head_node_(Node*);
     void set_tail_node_(Node*);
     std::string recursive_print_(Node*, std::string);
+    bool recursive_delete_(Node*, const int);
 
 };
