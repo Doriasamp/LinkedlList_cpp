@@ -14,7 +14,7 @@ int main(){
     LL.prepend(12);  // insert a second element in the front
     LL.print();
 
-    int list_of_values[4] = {3,4,8,7};
+    int list_of_values[5] = {3,4,8,7,23};
     for (const int& i: list_of_values){
         LL.prepend(i);  // inserting all the elements of array in the LL at iteration
     }
@@ -27,7 +27,7 @@ int main(){
     std::cout << "Searching for value '5' in the LL: " << LL.search(5) << std::endl;
     std::cout << "Searching for value '64' in the LL: " << LL.search(64) << std::endl;
 
-    // test deep copy constructor
+    // test deep copy constructorf
     LinkedList new_LL = LL;
     std::cout << "\nResult of copy constructor ..." << std::endl;
     new_LL.print();
@@ -35,8 +35,31 @@ int main(){
     // trivia test by copying an empty LL
     LinkedList empty_LL = LinkedList();
     LinkedList copy_empty_LL = empty_LL;
-    std::cout << "\nResult of copy constructor with empty..." << std::endl;
-    new_LL.print();
+    std::cout << "\nResult of copy constructor with empty LL..." << std::endl;
+    copy_empty_LL.print();
+
+    // testing delete_first()
+    LL.append(3);
+    LL.append(5);
+    LL.append(3);
+    LL.prepend(3);
+    std::cout << "\nPrintout of LL before deleting value: 3" << std::endl;
+    LL.print();
+    LL.delete_first(3);
+    std::cout << "\nPrintout of LL after deleting value: 3" << std::endl;
+    LL.print();
+    LL.delete_first(3);
+    std::cout << "\nPrintout of LL after deleting value: 3" << std::endl;
+    LL.print();
+    LL.delete_first(3);
+    std::cout << "\nPrintout of LL after deleting value: 3" << std::endl;
+    LL.print();
+    LL.delete_first(3);
+    std::cout << "\nPrintout of LL after deleting (LAST) value: 3" << std::endl;
+    LL.print();
+    std::cout << "Trying to delete the value 3 after deleting all of them: " << std::endl;
+    std::cout << LL.delete_first(3) << std::endl;
+
 
 
     return 0;
