@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Sensitive
+ini.ini
+*.ini
+ini.ini
+ini.ini
